@@ -88,15 +88,15 @@ def main():
                     # job= "hr manager"
                     # intro="my name i s aslam"
                     if st.session_state.count==2:
-                        response = st.session_state.chain.run({"input":f"You are an interviewer for job role '{st.session_state.intro}'.This is the candiadate introduction '{st.session_state.job}'.Ask him next question as an interviewer"})
+                        response = st.session_state.chain({"input":f"You are an interviewer for job role '{st.session_state.intro}'.This is the candiadate introduction '{st.session_state.job}'.Ask him next question as an interviewer"})
                     #response = st.session_state.chain({"input":prompt})
                     if st.session_state.count>2:
                         if st.session_state.count==6:
-                            response = st.session_state.chain.run({"input":f"This is answer '{prompt}' for yout last questio.Now you can conlude interview give him a feed back based on the all previous messge in the interview"})
+                            response = st.session_state.chain({"input":f"This is answer '{prompt}' for yout last questio.Now you can conlude interview give him a feed back based on the all previous messge in the interview"})
                         else:
-                            response = st.session_state.chain.run({"input":f"This is answer '{prompt}' for yout last questio.This is  an interview so first give him a reply after Ask him next question as an interviewer"})
+                            response = st.session_state.chain({"input":f"This is answer '{prompt}' for yout last questio.This is  an interview so first give him a reply after Ask him next question as an interviewer"})
                     
-                    assistant_response=response["text"]
+                    assistant_response=response['text']
 
                     
 
