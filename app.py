@@ -96,7 +96,7 @@ def main():
                         else:
                             response = st.session_state.chain.run({"input":f"This is answer '{prompt}' for yout last questio.This is  an interview so first give him a reply after Ask him next question as an interviewer"})
                     
-                    assistant_response=response['text']
+                    assistant_response=response["text"]
 
                     
 
